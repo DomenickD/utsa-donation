@@ -14,7 +14,7 @@ export default function BuildingDetailPage() {
     <main className={styles.page}>
       <div className={styles.container}>
         <Link to="/" className={styles.backLink}>
-          ← Back to buildings
+          &larr; Back to all facilities
         </Link>
 
         <h1 className={styles.title}>{building.name}</h1>
@@ -74,6 +74,17 @@ export default function BuildingDetailPage() {
                   <span className={styles.statusLabel}>Named By</span>
                   <span className={styles.statusValue}>{building.namedBy}</span>
                 </div>
+              </div>
+
+              <div className={styles.ctaWrap}>
+                <a
+                  href="https://engage.utsa.edu/givenow"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.ctaButton}
+                >
+                  Make a Gift &rarr;
+                </a>
               </div>
             </div>
           </aside>
