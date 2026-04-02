@@ -1,10 +1,10 @@
 :root {
-  --brand-primary: #f27421;
-  --brand-secondary: #00502f;
-  --text-dark: #1a1a1a;
+  --brand-primary: #F15A22;   /* UTSA Orange */
+  --brand-secondary: #003087; /* UTSA Navy   */
+  --text-dark: #1A1A2E;
   --text-muted: #6b7280;
-  --bg-light: #f9f9f9;
-  --border: #e5e7eb;
+  --bg-light: #F4F6FA;
+  --border: #dde3ee;
   --white: #ffffff;
 }
 
