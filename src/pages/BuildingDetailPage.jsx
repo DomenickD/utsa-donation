@@ -7,9 +7,11 @@ export default function BuildingDetailPage() {
   const navigate = useNavigate()
   const building = getBuildingById(id)
   const [hoveredZone, setHoveredZone] = useState(null)
+  const [isTouch, setIsTouch] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setIsTouch(window.matchMedia('(hover: none)').matches)
   }, [])
 
   if (!building) return <Navigate to="/" replace />
@@ -61,8 +63,8 @@ export default function BuildingDetailPage() {
                       >
                         <polygon
                           points={pointsStr}
-                          fill={isHovered ? 'rgba(34,197,94,0.45)' : 'rgba(34,197,94,0.15)'}
-                          stroke="rgb(74,222,128)"
+                          fill={isHovered ? 'rgba(34,197,94,0.45)' : isTouch ? 'rgba(34,197,94,0.1)' : 'rgba(34,197,94,0)'}
+                          stroke={isHovered ? 'rgb(74,222,128)' : isTouch ? 'rgba(74,222,128,0.5)' : 'rgba(74,222,128,0)'}
                           strokeWidth="6"
                           style={{ transition: 'fill 0.15s ease' }}
                         />
@@ -71,13 +73,13 @@ export default function BuildingDetailPage() {
                           y={cy}
                           textAnchor="middle"
                           dominantBaseline="middle"
-                          fill="white"
+                          fill={isHovered ? 'white' : isTouch ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0)'}
                           fontSize="52"
                           fontWeight="bold"
                           fontFamily="sans-serif"
                           style={{
                             pointerEvents: 'none',
-                            textShadow: '0 2px 4px rgba(0,0,0,0.9)',
+                            textShadow: (isHovered || isTouch) ? '0 2px 4px rgba(0,0,0,0.9)' : 'none',
                             letterSpacing: '0.1em',
                             textTransform: 'uppercase',
                           }}
