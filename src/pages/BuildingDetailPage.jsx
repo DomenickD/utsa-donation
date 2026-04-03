@@ -1,93 +1,102 @@
+import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getBuildingById } from '../data/buildings'
-import styles from './BuildingDetailPage.module.css'
 
 export default function BuildingDetailPage() {
   const { id } = useParams()
   const building = getBuildingById(id)
 
-  if (!building) {
-    return <Navigate to="/" replace />
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  if (!building) return <Navigate to="/" replace />
 
   return (
-    <main className={styles.page}>
-      <div className={styles.container}>
-        <Link to="/" className={styles.backLink}>
-          &larr; Back to all facilities
+    <main className="pt-24 bg-[#fbf9fc] min-h-screen">
+      <div className="max-w-7xl mx-auto px-12 py-16">
+
+        <Link
+          to="/"
+          className="inline-flex items-center text-[#ac3400] font-bold text-sm mb-10 hover:opacity-70 transition-opacity"
+        >
+          <span className="material-symbols-outlined mr-1 text-base">arrow_back</span>
+          Back to Facilities
         </Link>
 
-        <h1 className={styles.title}>{building.name}</h1>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
 
-        <div className={styles.layout}>
           {/* Left: image + areas */}
-          <div className={styles.main}>
-            <div className={styles.imageWrap}>
+          <div className="lg:col-span-2">
+            <h1 className="font-headline text-5xl font-black text-[#000d21] tracking-tighter mb-8 uppercase">
+              {building.name}
+            </h1>
+            <div className="relative rounded-2xl overflow-hidden aspect-video mb-8 bg-[#e3e2e5]">
               <img
                 src={building.image}
                 alt={building.name}
-                className={styles.image}
+                className="w-full h-full object-cover"
               />
-              <div className={styles.mapBadge}>Building map preview coming soon</div>
             </div>
 
-            <section className={styles.areasSection}>
-              <h2 className={styles.sectionHeading}>Areas</h2>
-              {building.areas.length === 0 ? (
-                <p className={styles.noAreas}>
-                  No public-ready areas are available for this facility yet.
-                </p>
-              ) : (
-                <ul className={styles.areasList}>
+            {building.areas.length > 0 && (
+              <div className="bg-white rounded-xl p-8 shadow-[0_4px_20px_-10px_rgba(0,13,33,0.08)]">
+                <h2 className="font-headline text-xl font-bold text-[#000d21] mb-6 uppercase tracking-tight border-b-2 border-[#ac3400] pb-3 inline-block">
+                  Areas Within This Facility
+                </h2>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                   {building.areas.map((area) => (
-                    <li key={area} className={styles.areaItem}>
+                    <li
+                      key={area}
+                      className="flex items-center gap-3 bg-[#f5f3f6] rounded-lg px-4 py-3 text-[#000d21] font-body font-medium text-sm"
+                    >
+                      <span className="material-symbols-outlined text-[#ac3400] text-base">location_on</span>
                       {area}
                     </li>
                   ))}
                 </ul>
-              )}
-            </section>
+              </div>
+            )}
           </div>
 
-          {/* Right: status panel */}
-          <aside className={styles.sidebar}>
-            <div className={styles.statusCard}>
-              <h2 className={styles.statusTitle}>{building.name}</h2>
-              <div className={styles.statusGrid}>
-                <div className={styles.statusItem}>
-                  <span className={styles.statusLabel}>Gift Level</span>
-                  <span className={styles.statusValue}>{building.giftLevel}</span>
-                </div>
-                <div className={styles.statusItem}>
-                  <span className={styles.statusLabel}>Status</span>
-                  <span
-                    className={`${styles.statusValue} ${
-                      building.status === 'Available'
-                        ? styles.statusAvailable
-                        : styles.statusNamed
-                    }`}
-                  >
+          {/* Right: status card */}
+          <aside className="lg:col-span-1">
+            <div className="bg-[#000d21] rounded-2xl overflow-hidden shadow-[0_8px_32px_-8px_rgba(0,13,33,0.2)] sticky top-28">
+              <div className="px-8 py-6 border-b border-white/10">
+                <h2 className="font-headline text-lg font-bold text-white uppercase tracking-tight">{building.name}</h2>
+              </div>
+              <div className="px-8 py-6 space-y-5">
+                <div className="flex justify-between items-center">
+                  <span className="text-white/50 text-xs font-bold uppercase tracking-widest">Status</span>
+                  <span className={`text-sm font-bold ${building.status === 'Available' ? 'text-[#ac3400]' : 'text-white/70'}`}>
                     {building.status}
                   </span>
                 </div>
-                <div className={styles.statusItem}>
-                  <span className={styles.statusLabel}>Named By</span>
-                  <span className={styles.statusValue}>{building.namedBy}</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/50 text-xs font-bold uppercase tracking-widest">Gift Level</span>
+                  <span className="text-white text-sm font-bold">{building.giftLevel}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/50 text-xs font-bold uppercase tracking-widest">Named By</span>
+                  <span className="text-white text-sm font-bold">{building.namedBy}</span>
                 </div>
               </div>
-
-              <div className={styles.ctaWrap}>
+              <div className="px-8 pb-8">
                 <a
                   href="https://engage.utsa.edu/givenow"
                   target="_blank"
                   rel="noreferrer"
-                  className={styles.ctaButton}
+                  className="block w-full text-center bg-[#ac3400] text-white font-headline font-bold py-4 rounded-full hover:opacity-80 transition-opacity"
                 >
-                  Make a Gift &rarr;
+                  Make a Gift
                 </a>
+                <p className="text-white/40 text-xs text-center mt-4 leading-relaxed">
+                  Contact our team for custom naming opportunities at this facility.
+                </p>
               </div>
             </div>
           </aside>
+
         </div>
       </div>
     </main>
