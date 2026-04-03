@@ -77,15 +77,12 @@ export default function Navbar() {
 
         {/* Logo + divider + nav tabs */}
         <div className="flex items-center">
-          <a href="https://goutsa.com" target="_blank" rel="noreferrer" className="flex items-center gap-3">
+          <a href="https://www.utsa.edu" target="_blank" rel="noreferrer" className="flex items-center">
             <img
-              src="https://goutsa.com/_nuxt/logo.DqjNS18P.png"
-              alt="UTSA Roadrunners Athletics"
-              className="h-10 w-auto object-contain"
+              src="https://www.utsa.edu/_files/images/logos/ut-san-antonio.svg"
+              alt="The University of Texas at San Antonio"
+              className="h-8 md:h-10 w-auto object-contain"
             />
-            <span className="text-2xl font-black text-[#0C2340] uppercase tracking-tighter font-lexend">
-              UTSA Athletics
-            </span>
           </a>
 
           {/* Divider */}

@@ -7,6 +7,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/m7vqL-ttkHEokm8eatbQRes5QxSrpmXOgW5nB-bqcPw/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvb0VQaTJab0VlVWpTeXlGMW01WFl6bWRseDlrNks5WmxCWThpMnZHQS5qcGc.jpg',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/QB4WUnLoyMVylGWu--8rbgKh1ERmyYwfbURCbqUNjoo/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjUvMDQvMDgvV0VES0V4RXZMZmlWN050OUJLM2hXUWZYUHhyVElwUFN1NmowVmI2cC5wbmc.png',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/k5zT_VSEbNxNkgAy-7iaukBWANzg_v3oBu4qfzhi5f0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjUvMDQvMDgvTGRyR2o4cFpjWlVyOUo1R3k5U0k2cXJKZmY5bHdOM1UybDFHZGR1cC5wbmc.png',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/dWNPiDXpET0Ba1GVn8Hnct9L6RePSI1Vy44ZYVmfvs4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjUvMDQvMDgvc3BqdkV0c0tHTDhORGUxTU1VVjF4cmtoRjNPazl6aXg3emdRNWlDQy5wbmc.png',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/UE95b7gcQxPBWZGyW4_h6EXWKtOalr00yWq261fAYns/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvUXI5a1NUSEV4akZVNEt6YmZKdFBYbVlhMVM0MnhRNkhjdGt4bWVHbC5qcGc.jpg',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/cJuNgksy0-7R-i7Ej08eEJxSAxp7h0N6odipOrRA-0A/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvZHNSWGVKY2hjU1FmUTEyMjZqeVdnSFVpRklxaHRLcHU4bndyYTJybS5qcGc.jpg',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/8PVPiRS1jNaGy9Rb-vlldInbpWiX3Fxh_Up4FUTq8j4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvejVaSzR0SFltQmRkYmxCWXAwejBsamZ2MzQ1NVFScXZNQWRaMlpZdy5qcGc.jpg',
     areas: [],
+    division: 'Athletics',
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/ZlpaGBMlH0VTcO_6jvGuqEObHchMWwJus6LSu6ruhDE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvVjFKZ3NvTDNHMTJlYzBGUDlMOFVjY3pzNHJxdDdWVkJKNmdGaURwMC5qcGc.jpg',
     areas: [],
+    division: 'Athletics',
     // Polygon points are [x, y] pixel coordinates in the source image space (1980 × 1114 px).
     // Measure directly on the image and replace these values to reposition each zone.
     zones: [
@@ -90,6 +98,52 @@ export const buildings = [
       },
     ],
   },
+  // Academic & Research
+  { id: 101, name: 'Applied Engineering and Technology Building (AET)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/AET016.JPG&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 102, name: 'Arts Building (ART)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/10-26-20_421.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 103, name: 'Biosciences Building (BSB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/10-29-20_017.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 104, name: 'Biotechnology Sciences and Engineering Building (BSE)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/BSE012_1.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 105, name: 'Buena Vista Street Building (BVB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/DT_Library_1.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 106, name: 'Business Building (BB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/COB018.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 107, name: 'Center for Archaeological Research (CAR)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=CAR', areas: [], division: 'Academic & Research' },
+  { id: 108, name: 'Durango Building (DBB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/DTC007.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 109, name: 'Engineering Building (EB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/4_3_2023_engineering_building-2.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 110, name: 'Environmental Science Greenhouse (ESG)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=ESG', areas: [], division: 'Academic & Research' },
+  { id: 111, name: 'Foundry (FND)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=FND', areas: [], division: 'Academic & Research' },
+  { id: 112, name: 'Frio Street Building (FS)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/DTC009_1_.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 113, name: 'Graduate School & Research Building (GSR)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/10-29-20_058.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 114, name: 'Greenhouse (GHS)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=GHS', areas: [], division: 'Academic & Research' },
+  { id: 115, name: 'John L. Santikos Building (SAN)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=SAN', areas: [], division: 'Academic & Research' },
+  { id: 116, name: 'Kilns (KLN)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=KLN', areas: [], division: 'Academic & Research' },
+  { id: 117, name: 'Large Scale Testing Laboratory (LST)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/LST_300dpi.png&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 118, name: 'Main Building (MB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/MB.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 119, name: 'Margaret Batts Tobin Laboratories (MBT)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/TobinBldg1806.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 120, name: 'McAllister Ceramics Building (MCB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=MCB', areas: [], division: 'Academic & Research' },
+  { id: 121, name: 'McKinney Humanities Building (MHB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/mckinney_humanities-1.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 122, name: 'MEMS Lab (MEM)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=MEM', areas: [], division: 'Academic & Research' },
+  { id: 123, name: 'Mesquite Living Lab (MLL)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/MLL.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 124, name: 'Monterey Building (MNT)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/Mont_1.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 125, name: 'Multidisciplinary Studies Building (MS)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/MS_3.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 126, name: 'Negley Building (NEG)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=NEG', areas: [], division: 'Academic & Research' },
+  { id: 127, name: 'North Paseo Building (NPB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/Larry-Speck-Page-Southerland-Page-North-Paseo-Academic-Building-University-of-Texas-San-Antonio-2.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 128, name: 'Peter T. Flawn Sciences Building (FLN)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/Flawn.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 129, name: 'Power & Dynamics Systems Lab (PDS)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=PDS', areas: [], division: 'Academic & Research' },
+  { id: 130, name: 'San Pedro I (SP1)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/1_3_2023_sp1-4.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 131, name: 'San Pedro II (SP2) — Under Construction', status: 'Available', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/sp1-sp2-rendering-3.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 132, name: 'Science and Engineering Building (SEB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/seb-slide01.png&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 133, name: 'Science and Engineering Lab (SEL)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=SEL', areas: [], division: 'Academic & Research' },
+  { id: 134, name: 'Science Research Laboratories (SRL)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/science_research_laboratories-2.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 135, name: 'Sculpture & Ceramics Graduate Studio (SCG)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/SCG003.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 136, name: 'Sculpture/Ceramics (SC)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=SC', areas: [], division: 'Academic & Research' },
+  { id: 137, name: 'Student Success Center (SSC)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/student_success_center-1_1.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 138, name: 'Student Union (SU)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/10-26-20_360.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 139, name: 'Tobin Building (TOB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/Tobin.png&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  { id: 140, name: 'Urschel Administration Building (UAB)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/UAB_Entrance_Area.jpg&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
+  // Health Education
+  { id: 201, name: 'Sunshine Cottage School for Deaf Children', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=Sunshine+Cottage', areas: [], division: 'Health Education' },
+  { id: 202, name: 'The Texas Hearing Institute', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=Texas+Hearing+Institute', areas: [], division: 'Health Education' },
+  { id: 203, name: 'The University of Texas Education and Research Center', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=UT+Education+%26+Research+Center', areas: [], division: 'Health Education' },
+  { id: 204, name: 'Wonderland of the Americas', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://placehold.co/800x450/002A5C/F47920?text=Wonderland+of+the+Americas', areas: [], division: 'Health Education' },
 ];
 
 export function getBuildingById(id) {
