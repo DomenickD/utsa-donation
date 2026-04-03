@@ -1,9 +1,14 @@
+import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getBuildingById } from '../data/buildings'
 
 export default function BuildingDetailPage() {
   const { id } = useParams()
   const building = getBuildingById(id)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   if (!building) return <Navigate to="/" replace />
 
