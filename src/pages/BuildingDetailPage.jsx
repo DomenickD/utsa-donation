@@ -1,13 +1,17 @@
-import { useEffect } from 'react'
-import { useParams, Link, Navigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import { getBuildingById } from '../data/buildings'
 
 export default function BuildingDetailPage() {
   const { id } = useParams()
+  const navigate = useNavigate()
   const building = getBuildingById(id)
+  const [hoveredZone, setHoveredZone] = useState(null)
+  const [isTouch, setIsTouch] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    setIsTouch(window.matchMedia('(hover: none)').matches)
   }, [])
 
   if (!building) return <Navigate to="/" replace />
@@ -37,6 +41,56 @@ export default function BuildingDetailPage() {
                 alt={building.name}
                 className="w-full h-full object-cover"
               />
+              {building.zones && (
+                <svg
+                  className="absolute inset-0 w-full h-full"
+                  viewBox="0 0 1980 1114"
+                  preserveAspectRatio="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {building.zones.map((zone) => {
+                    const pointsStr = zone.points.map((p) => p.join(',')).join(' ')
+                    const cx = zone.points.reduce((s, p) => s + p[0], 0) / zone.points.length
+                    const cy = zone.points.reduce((s, p) => s + p[1], 0) / zone.points.length
+                    const isHovered = hoveredZone === zone.id
+                    return (
+                      <g
+                        key={zone.id}
+                        onClick={() => navigate(`/buildings/${id}/zones/${zone.id}`)}
+                        onMouseEnter={() => setHoveredZone(zone.id)}
+                        onMouseLeave={() => setHoveredZone(null)}
+                        style={{ cursor: 'pointer' }}
+                      >
+                        <polygon
+                          points={pointsStr}
+                          fill={isHovered ? 'rgba(34,197,94,0.45)' : isTouch ? 'rgba(34,197,94,0.1)' : 'rgba(34,197,94,0)'}
+                          stroke={isHovered ? 'rgb(74,222,128)' : isTouch ? 'rgba(74,222,128,0.5)' : 'rgba(74,222,128,0)'}
+                          strokeWidth="6"
+                          style={{ transition: 'fill 0.15s ease' }}
+                        />
+                        <text
+                          x={cx}
+                          y={cy}
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          fill={isHovered ? 'white' : isTouch ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0)'}
+                          fontSize="52"
+                          fontWeight="bold"
+                          fontFamily="sans-serif"
+                          style={{
+                            pointerEvents: 'none',
+                            textShadow: (isHovered || isTouch) ? '0 2px 4px rgba(0,0,0,0.9)' : 'none',
+                            letterSpacing: '0.1em',
+                            textTransform: 'uppercase',
+                          }}
+                        >
+                          {zone.name}
+                        </text>
+                      </g>
+                    )
+                  })}
+                </svg>
+              )}
             </div>
 
             {building.areas.length > 0 && (

@@ -1,11 +1,17 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#000d21] w-full py-12 md:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-5 md:px-12 max-w-7xl mx-auto">
-        <div className="col-span-1 sm:col-span-2 md:col-span-1">
-          <div className="text-xl font-lexend font-bold text-white mb-4 md:mb-6">UTSA Athletics</div>
-          <p className="font-inter text-sm tracking-wide text-slate-400 mb-4 md:mb-6">
-            Building a premiere collegiate athletic program in the heart of San Antonio.
+    <footer className="bg-[#000d21] w-full py-16">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto">
+        <div className="col-span-1">
+          <a href="https://www.utsa.edu" target="_blank" rel="noreferrer" className="inline-block mb-4">
+            <img
+              src="https://www.utsa.edu/_files/images/logos/ut-san-antonio.svg"
+              alt="The University of Texas at San Antonio"
+              className="h-8 w-auto object-contain brightness-0 invert"
+            />
+          </a>
+          <p className="font-inter text-sm tracking-wide text-slate-400 mb-6">
+            Investing in the future of The University of Texas at San Antonio — from athletics to academics and beyond.
           </p>
           <div className="flex space-x-4">
             <span className="material-symbols-outlined text-slate-400 cursor-pointer hover:text-white">social_leaderboard</span>
@@ -47,9 +53,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 md:px-12 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="font-inter text-sm tracking-wide text-slate-500 text-center md:text-left">
-          © {new Date().getFullYear()} UTSA Athletics. All Rights Reserved.
+      <div className="max-w-7xl mx-auto px-12 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="font-inter text-sm tracking-wide text-slate-500">
+          © {new Date().getFullYear()} The University of Texas at San Antonio. All Rights Reserved.
         </div>
         <div className="flex space-x-6">
           <a className="text-slate-500 hover:text-white text-xs uppercase tracking-widest" href="#">Compliance</a>
