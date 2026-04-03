@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#000d21] w-full py-16">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-7xl mx-auto">
-        <div className="col-span-1">
-          <div className="text-xl font-lexend font-bold text-white mb-6">UTSA Athletics</div>
-          <p className="font-inter text-sm tracking-wide text-slate-400 mb-6">
+    <footer className="bg-[#000d21] w-full py-12 md:py-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 px-5 md:px-12 max-w-7xl mx-auto">
+        <div className="col-span-1 sm:col-span-2 md:col-span-1">
+          <div className="text-xl font-lexend font-bold text-white mb-4 md:mb-6">UTSA Athletics</div>
+          <p className="font-inter text-sm tracking-wide text-slate-400 mb-4 md:mb-6">
             Building a premiere collegiate athletic program in the heart of San Antonio.
           </p>
           <div className="flex space-x-4">
@@ -15,8 +15,8 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-lexend font-bold mb-6">Philanthropy</h4>
-          <ul className="space-y-4">
+          <h4 className="text-white font-lexend font-bold mb-4 md:mb-6">Philanthropy</h4>
+          <ul className="space-y-3 md:space-y-4">
             <li><a className="text-slate-400 hover:text-white transition-colors text-sm font-inter tracking-wide" href="#">Our Vision</a></li>
             <li><a className="text-slate-400 hover:text-white transition-colors text-sm font-inter tracking-wide" href="#">Impact Reports</a></li>
             <li><a className="text-slate-400 hover:text-white transition-colors text-sm font-inter tracking-wide" href="#">Scholarships</a></li>
@@ -25,8 +25,8 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-lexend font-bold mb-6">Quick Links</h4>
-          <ul className="space-y-4">
+          <h4 className="text-white font-lexend font-bold mb-4 md:mb-6">Quick Links</h4>
+          <ul className="space-y-3 md:space-y-4">
             <li><a className="text-slate-400 hover:text-white transition-colors text-sm font-inter tracking-wide" href="#">Contact Us</a></li>
             <li><a className="text-slate-400 hover:text-white transition-colors text-sm font-inter tracking-wide" href="#">Privacy Policy</a></li>
             <li><a className="text-slate-400 hover:text-white transition-colors text-sm font-inter tracking-wide" href="#">Giving FAQ</a></li>
@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white font-lexend font-bold mb-6">Join the Mailing List</h4>
+          <h4 className="text-white font-lexend font-bold mb-4 md:mb-6">Join the Mailing List</h4>
           <div className="relative">
             <input
               className="w-full bg-slate-800/50 border-none rounded-lg py-3 px-4 text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ac3400]"
@@ -47,8 +47,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-12 mt-16 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="font-inter text-sm tracking-wide text-slate-500">
+      <div className="max-w-7xl mx-auto px-5 md:px-12 mt-10 md:mt-16 pt-6 md:pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="font-inter text-sm tracking-wide text-slate-500 text-center md:text-left">
           © {new Date().getFullYear()} UTSA Athletics. All Rights Reserved.
         </div>
         <div className="flex space-x-6">
