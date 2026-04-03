@@ -1,0 +1,66 @@
+.footer {
+  background: var(--brand-secondary);
+  border-top: 3px solid var(--brand-primary);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 36px 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.wordmarkU {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.06em;
+}
+
+.wordmarkSub {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  flex: 1;
+  min-width: 160px;
+}
+
+.givingLink {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  background: var(--brand-primary);
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: background 0.18s;
+  white-space: nowrap;
+}
+
+.givingLink:hover {
+  background: #d94e18;
+}
+
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
