@@ -44,61 +44,16 @@ export default function BuildingsPage() {
       </section>
 
       {/* Naming Opportunities Grid */}
-<<<<<<< HEAD
-      <section id="facilities" className="py-14 md:py-24 px-5 md:px-12 max-w-7xl mx-auto">
-        <div className="mb-10 md:mb-16">
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold text-[#000d21] mb-3 md:mb-4 tracking-tight">
-            Available Opportunities
-          </h2>
-          <p className="text-[#44474d] text-base md:text-lg">
-=======
       <section id="facilities" className="py-24 px-12 max-w-7xl mx-auto">
         <div className="mb-16">
           <h2 className="font-headline text-4xl font-extrabold text-[#000d21] mb-4 tracking-tight">
             Available Opportunities
           </h2>
           <p className="text-[#44474d] text-lg">
->>>>>>> develop
             Partner with us to provide world-class environments for our student-athletes to compete, train, and succeed.
           </p>
         </div>
 
-<<<<<<< HEAD
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-          {buildings.map((building) => (
-            <Link
-              key={building.id}
-              to={`/buildings/${building.id}`}
-              className="group bg-white rounded-xl overflow-hidden shadow-[0_4px_20px_-10px_rgba(0,13,33,0.1)] hover:shadow-[0_20px_40px_-15px_rgba(0,13,33,0.15)] transition-all duration-500 flex flex-col"
-            >
-              <div className="relative h-52 md:h-64 overflow-hidden">
-                <img
-                  alt={building.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  src={building.image}
-                  loading="lazy"
-                />
-                {building.status === 'Available' && (
-                  <div className="absolute top-3 left-3 md:top-4 md:left-4">
-                    <span className="bg-[#ac3400] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full">
-                      Available
-                    </span>
-                  </div>
-                )}
-              </div>
-              <div className="p-5 md:p-8 flex flex-col flex-1">
-                <h3 className="font-headline text-xl md:text-2xl font-bold text-[#000d21] mb-4 md:mb-6">{building.name}</h3>
-                <div className="border-t border-[#efedf0] pt-4 md:pt-6 mt-auto">
-                  <span className="inline-flex items-center gap-2 bg-[#ac3400] text-white text-sm font-bold px-5 py-2.5 rounded-full">
-                    Learn More
-                    <span className="material-symbols-outlined text-base">arrow_forward</span>
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-=======
         {Object.entries(divisions).map(([division, items]) => (
           <div key={division} className="mb-10">
             {/* Division header — clickable to collapse */}
@@ -151,7 +106,6 @@ export default function BuildingsPage() {
             </div>
           </div>
         ))}
->>>>>>> develop
       </section>
 
       {/* Recognition Section */}
