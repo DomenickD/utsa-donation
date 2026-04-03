@@ -1,6 +1,6 @@
 .header {
-  background: var(--brand-secondary);
-  border-bottom: 3px solid var(--brand-primary);
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -10,7 +10,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 68px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,64 +18,35 @@
 
 .logoLink {
   display: flex;
-  align-items: baseline;
-  gap: 8px;
-  text-decoration: none;
+  align-items: center;
 }
 
-.wordmarkU {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0.06em;
-  line-height: 1;
-}
-
-.wordmarkSub {
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.72);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
 }
 
 .navItem {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--text-dark);
   transition: color 0.15s;
   white-space: nowrap;
 }
 
 .navItem:hover {
-  color: var(--white);
+  color: var(--brand-primary);
 }
 
 .navItem.active {
-  color: var(--white);
+  color: var(--brand-primary);
   border-bottom: 2px solid var(--brand-primary);
   padding-bottom: 2px;
-}
-
-.givingBtn {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--white);
-  background: var(--brand-primary);
-  padding: 8px 18px;
-  border-radius: 999px;
-  white-space: nowrap;
-  transition: background 0.18s, transform 0.12s;
-  letter-spacing: 0.03em;
-}
-
-.givingBtn:hover {
-  background: #d94e18;
-  transform: translateY(-1px);
 }
