@@ -70,6 +70,25 @@ export const buildings = [
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/ZlpaGBMlH0VTcO_6jvGuqEObHchMWwJus6LSu6ruhDE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvVjFKZ3NvTDNHMTJlYzBGUDlMOFVjY3pzNHJxdDdWVkJKNmdGaURwMC5qcGc.jpg',
     areas: [],
+    // Polygon points are [x, y] pixel coordinates in the source image space (1980 × 1114 px).
+    // Measure directly on the image and replace these values to reposition each zone.
+    zones: [
+      {
+        id: 1,
+        name: 'Field 1',
+        points: [[2, 420], [684, 81], [1010, 203], [355, 589]],
+      },
+      {
+        id: 2,
+        name: 'Field 2',
+        points: [[1011, 204], [411, 602], [931, 682], [951, 722], [1388, 329],],
+      },
+      {
+        id: 3,
+        name: 'Building',
+        points: [[1287, 167], [1841, 167], [1841, 746], [1287, 746]],
+      },
+    ],
   },
 ];
 
