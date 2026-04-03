@@ -6,16 +6,20 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <a
-          href="https://utsaathletics.com"
+          href="https://goutsa.com"
           target="_blank"
           rel="noreferrer"
           className={styles.logoLink}
         >
           <img
-            src="https://utsaathletics.com/images/logos/site/site.png"
+            src="https://goutsa.com/_nuxt/logo.DqjNS18P.png"
             alt="UTSA Roadrunners Athletics"
             className={styles.logo}
           />
+          <div className={styles.logoText}>
+            <span className={styles.logoTitle}>Naming Opportunities</span>
+            <span className={styles.logoSub}>UTSA Athletics</span>
+          </div>
         </a>
 
         <nav className={styles.nav}>
