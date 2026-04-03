@@ -1,5 +1,20 @@
 export const buildings = [
   {
+    id: 8,
+    name: 'City and County Partnership',
+    status: 'Named',
+    giftLevel: '—',
+    namedBy: '—',
+    image: 'https://goutsa.com/imgproxy/ZlpaGBMlH0VTcO_6jvGuqEObHchMWwJus6LSu6ruhDE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvVjFKZ3NvTDNHMTJlYzBGUDlMOFVjY3pzNHJxdDdWVkJKNmdGaURwMC5qcGc.jpg',
+    areas: [],
+    division: 'Athletics',
+    zones: [
+      { id: 1, name: 'Field 1', points: [[2, 420], [684, 81], [1010, 203], [355, 589]] },
+      { id: 2, name: 'Field 2', points: [[1035, 204], [423, 580], [440, 580], [440, 610], [430, 618], [880, 820], [975, 748], [960, 720], [960, 670], [1430, 344]] },
+      { id: 3, name: 'Building', points: [[1550, 268], [1874, 375], [1874, 500], [1300, 900], [975, 748], [960, 720], [960, 670]] },
+    ],
+  },
+  {
     id: 1,
     name: 'Alamodome',
     status: 'Named',
@@ -68,35 +83,6 @@ export const buildings = [
     image: 'https://goutsa.com/imgproxy/8PVPiRS1jNaGy9Rb-vlldInbpWiX3Fxh_Up4FUTq8j4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvejVaSzR0SFltQmRkYmxCWXAwejBsamZ2MzQ1NVFScXZNQWRaMlpZdy5qcGc.jpg',
     areas: [],
     division: 'Athletics',
-  },
-  {
-    id: 8,
-    name: 'City and County Partnership',
-    status: 'Named',
-    giftLevel: '—',
-    namedBy: '—',
-    image: 'https://goutsa.com/imgproxy/ZlpaGBMlH0VTcO_6jvGuqEObHchMWwJus6LSu6ruhDE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjMvMDgvMDMvVjFKZ3NvTDNHMTJlYzBGUDlMOFVjY3pzNHJxdDdWVkJKNmdGaURwMC5qcGc.jpg',
-    areas: [],
-    division: 'Athletics',
-    // Polygon points are [x, y] pixel coordinates in the source image space (1980 × 1114 px).
-    // Measure directly on the image and replace these values to reposition each zone.
-    zones: [
-      {
-        id: 1,
-        name: 'Field 1',
-        points: [[2, 420], [684, 81], [1010, 203], [355, 589]],
-      },
-      {
-        id: 2,
-        name: 'Field 2',
-        points: [[1035, 204], [423, 580], [440, 580], [440, 610], [430, 618], [880, 820], [975, 748], [960, 720], [960, 670], [1430, 344],],
-      },
-      {
-        id: 3,
-        name: 'Building',
-        points: [[1550, 268], [1874, 375], [1874, 500], [1300, 900], [975, 748], [960, 720], [960, 670],],
-      },
-    ],
   },
   // Academic & Research
   { id: 101, name: 'Applied Engineering and Technology Building (AET)', status: 'Named', giftLevel: '—', namedBy: '—', image: 'https://cms.concept3d.com/map/lib/image-cache/i.php?mapId=2028&image=2028/AET016.JPG&w=900&h=508&r=1', areas: [], division: 'Academic & Research' },
