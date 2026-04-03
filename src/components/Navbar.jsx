@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
@@ -31,9 +31,9 @@ export default function Navbar() {
             href="https://utsaathletics.com/giving"
             target="_blank"
             rel="noreferrer"
-            className={styles.givingBtn}
+            className={styles.navItem}
           >
-            Make a Gift
+            Giving
           </a>
         </nav>
       </div>
