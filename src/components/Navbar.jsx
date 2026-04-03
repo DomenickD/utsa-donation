@@ -6,13 +6,16 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <a
-          href="https://www.utsa.edu/athletics/"
+          href="https://utsaathletics.com"
           target="_blank"
           rel="noreferrer"
           className={styles.logoLink}
         >
-          <span className={styles.wordmarkU}>UTSA</span>
-          <span className={styles.wordmarkSub}>Athletics</span>
+          <img
+            src="https://utsaathletics.com/images/logos/site/site.png"
+            alt="UTSA Roadrunners Athletics"
+            className={styles.logo}
+          />
         </a>
 
         <nav className={styles.nav}>
@@ -25,7 +28,7 @@ export default function Navbar() {
             Naming Opportunities
           </NavLink>
           <a
-            href="https://engage.utsa.edu/givenow"
+            href="https://utsaathletics.com/giving"
             target="_blank"
             rel="noreferrer"
             className={styles.givingBtn}
