@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getBuildingById } from '../data/buildings'
+import BlueprintViewer from '../components/BlueprintViewer'
 
 export default function ZoneDetailPage() {
   const { id, zoneId } = useParams()
@@ -38,15 +39,19 @@ export default function ZoneDetailPage() {
               {zone.name}
             </h1>
 
-            <div className="bg-white rounded-xl p-10 shadow-[0_4px_20px_-10px_rgba(0,13,33,0.08)] flex flex-col items-center justify-center text-center min-h-64">
-              <span className="material-symbols-outlined text-[#ac3400] text-5xl mb-4">construction</span>
-              <h2 className="font-headline text-xl font-bold text-[#000d21] mb-3 uppercase tracking-tight">
-                Details Coming Soon
-              </h2>
-              <p className="text-[#1b1b1e]/60 font-body text-sm max-w-md leading-relaxed">
-                More information about this area — including naming opportunity pricing and recognition details — will be available here soon.
-              </p>
-            </div>
+            {zone.blueprint ? (
+              <BlueprintViewer zone={zone} />
+            ) : (
+              <div className="bg-white rounded-xl p-10 shadow-[0_4px_20px_-10px_rgba(0,13,33,0.08)] flex flex-col items-center justify-center text-center min-h-64">
+                <span className="material-symbols-outlined text-[#ac3400] text-5xl mb-4">construction</span>
+                <h2 className="font-headline text-xl font-bold text-[#000d21] mb-3 uppercase tracking-tight">
+                  Details Coming Soon
+                </h2>
+                <p className="text-[#1b1b1e]/60 font-body text-sm max-w-md leading-relaxed">
+                  More information about this area — including naming opportunity pricing and recognition details — will be available here soon.
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Right: donation card */}
