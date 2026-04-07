@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import utsaFieldImg from '../assets/utsa-field.png'
 
 const GridLines = () => {
   const lines = []
@@ -16,75 +17,36 @@ const GridLines = () => {
   }
   return <>{lines}</>
 }
-
 function FieldSVG({ zoneId }) {
   const label = zoneId === 1 ? 'FIELD 1 — BLUEPRINT' : 'FIELD 2 — BLUEPRINT'
   return (
     <>
       <rect width="800" height="500" fill="#001228" />
       <GridLines />
-
-      {/* Alternating grass stripes */}
       {[0, 1, 2, 3, 4, 5, 6].map(i => (
-        <rect
-          key={i}
-          x={40 + i * (720 / 7)} y="60"
-          width={720 / 7 + 1} height="380"
-          fill={i % 2 === 0 ? '#14521a' : '#185e1f'}
-        />
+        <rect key={i} x={40 + i * (720 / 7)} y="60" width={720 / 7 + 1} height="380"
+          fill={i % 2 === 0 ? '#14521a' : '#185e1f'} />
       ))}
-
-      {/* End zone shading */}
       <rect x="40" y="60" width="110" height="380" fill="rgba(172,52,0,0.22)" />
       <rect x="650" y="60" width="110" height="380" fill="rgba(172,52,0,0.22)" />
-
-      {/* Field outer boundary */}
       <rect x="40" y="60" width="720" height="380" fill="none" stroke="white" strokeWidth="2.5" />
-
-      {/* Goal lines */}
       <line x1="150" y1="60" x2="150" y2="440" stroke="white" strokeWidth="2" />
       <line x1="650" y1="60" x2="650" y2="440" stroke="white" strokeWidth="2" />
-
-      {/* Midfield line */}
       <line x1="400" y1="60" x2="400" y2="440" stroke="white" strokeWidth="2" />
-
-      {/* Center circle + spot */}
       <circle cx="400" cy="250" r="75" fill="none" stroke="white" strokeWidth="1.5" />
       <circle cx="400" cy="250" r="3" fill="white" />
-
-      {/* Left penalty area */}
       <rect x="40" y="150" width="130" height="200" fill="none" stroke="white" strokeWidth="1.5" />
-      {/* Left goal area */}
       <rect x="40" y="195" width="60" height="110" fill="none" stroke="white" strokeWidth="1.5" />
-      {/* Left goal */}
-      <rect x="22" y="215" width="18" height="70"
-        fill="rgba(255,255,255,0.12)" stroke="white" strokeWidth="2" />
-
-      {/* Right penalty area */}
+      <rect x="22" y="215" width="18" height="70" fill="rgba(255,255,255,0.12)" stroke="white" strokeWidth="2" />
       <rect x="630" y="150" width="130" height="200" fill="none" stroke="white" strokeWidth="1.5" />
-      {/* Right goal area */}
       <rect x="700" y="195" width="60" height="110" fill="none" stroke="white" strokeWidth="1.5" />
-      {/* Right goal */}
-      <rect x="760" y="215" width="18" height="70"
-        fill="rgba(255,255,255,0.12)" stroke="white" strokeWidth="2" />
-
-      {/* Blueprint title */}
-      <text x="400" y="22" textAnchor="middle"
-        fill="rgba(100,149,237,0.6)" fontSize="10"
-        fontFamily="monospace" fontWeight="bold" letterSpacing="3">
-        {label}
-      </text>
-
-      {/* Scale bar */}
+      <rect x="760" y="215" width="18" height="70" fill="rgba(255,255,255,0.12)" stroke="white" strokeWidth="2" />
+      <text x="400" y="22" textAnchor="middle" fill="rgba(100,149,237,0.6)" fontSize="10"
+        fontFamily="monospace" fontWeight="bold" letterSpacing="3">{label}</text>
       <line x1="640" y1="483" x2="760" y2="483" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" />
       <line x1="640" y1="479" x2="640" y2="487" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" />
       <line x1="760" y1="479" x2="760" y2="487" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" />
-      <text x="700" y="496" textAnchor="middle"
-        fill="rgba(255,255,255,0.35)" fontSize="8" fontFamily="monospace">
-        100 YDS
-      </text>
-
-      {/* North arrow */}
+      <text x="700" y="496" textAnchor="middle" fill="rgba(255,255,255,0.35)" fontSize="8" fontFamily="monospace">100 YDS</text>
       <text x="30" y="494" fill="rgba(255,255,255,0.35)" fontSize="9" fontFamily="monospace">N ↑</text>
     </>
   )
@@ -197,53 +159,110 @@ export default function BlueprintViewer({ zone }) {
       {/* ── Blueprint SVG ── */}
       <div className="rounded-xl overflow-hidden shadow-[0_4px_20px_-10px_rgba(0,13,33,0.18)]">
         <div className="bg-[#001228]">
-          <svg viewBox="0 0 800 500" className="w-full" style={{ display: 'block' }}>
-            {type === 'field' && <FieldSVG zoneId={zone.id} />}
-            {type === 'building' && <BuildingSVG />}
-
-            {spots.map(spot => {
-              const isActive = activeSpot?.id === spot.id
-              return (
-                <g
-                  key={spot.id}
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => setActiveSpot(isActive ? null : spot)}
+          {type === 'field' ? (
+            <>
+              <div className="relative w-full aspect-video">
+                {zone.image ? (
+                  <img src={utsaFieldImg} alt={zone.name} className="w-full h-full object-cover block" />
+                ) : (
+                  <svg viewBox="0 0 800 500" className="w-full h-full" style={{ display: 'block' }}>
+                    <FieldSVG zoneId={zone.id} />
+                  </svg>
+                )}
+                <svg
+                  viewBox="0 0 800 500"
+                  className="absolute inset-0 w-full h-full"
+                  style={{ display: 'block' }}
                 >
-                  {/* Soft glow */}
-                  <circle cx={spot.x} cy={spot.y} r="20"
-                    fill={isActive ? 'rgba(172,52,0,0.25)' : 'rgba(245,158,11,0.18)'} />
-                  {/* Main pin */}
-                  <circle cx={spot.x} cy={spot.y} r="12"
-                    fill={isActive ? '#ac3400' : '#f59e0b'}
-                    stroke="white" strokeWidth="2" />
-                  {/* Number */}
-                  <text
-                    x={spot.x} y={spot.y}
-                    textAnchor="middle" dominantBaseline="central"
-                    fill="white" fontSize="9"
-                    fontFamily="monospace" fontWeight="bold"
-                  >
-                    {spot.id}
-                  </text>
-                </g>
-              )
-            })}
-          </svg>
+                  {spots.map(spot => {
+                    const isActive = activeSpot?.id === spot.id
+                    return (
+                      <g
+                        key={spot.id}
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => setActiveSpot(isActive ? null : spot)}
+                      >
+                        <circle cx={spot.x} cy={spot.y} r="20"
+                          fill={isActive ? 'rgba(172,52,0,0.25)' : 'rgba(245,158,11,0.18)'} />
+                        <circle cx={spot.x} cy={spot.y} r="12"
+                          fill={isActive ? '#ac3400' : '#f59e0b'}
+                          stroke="white" strokeWidth="2" />
+                        <text
+                          x={spot.x} y={spot.y}
+                          textAnchor="middle" dominantBaseline="central"
+                          fill="white" fontSize="9"
+                          fontFamily="monospace" fontWeight="bold"
+                        >
+                          {spot.id}
+                        </text>
+                      </g>
+                    )
+                  })}
+                </svg>
+              </div>
 
-          {/* Legend */}
-          <div className="flex items-center gap-5 px-4 py-2.5 border-t border-white/10">
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0" />
-              <span className="text-white/45 text-xs font-mono">Available</span>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-[#ac3400] flex-shrink-0" />
-              <span className="text-white/45 text-xs font-mono">Selected</span>
-            </div>
-            <span className="text-white/25 text-xs font-mono ml-auto hidden sm:block">
-              TAP A MARKER TO SELECT
-            </span>
-          </div>
+              {/* Legend */}
+              <div className="flex items-center gap-5 px-4 py-2.5 border-t border-white/10">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0" />
+                  <span className="text-white/45 text-xs font-mono">Available</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ac3400] flex-shrink-0" />
+                  <span className="text-white/45 text-xs font-mono">Selected</span>
+                </div>
+                <span className="text-white/25 text-xs font-mono ml-auto hidden sm:block">
+                  TAP A MARKER TO SELECT
+                </span>
+              </div>
+            </>
+          ) : (
+            <>
+              <svg viewBox="0 0 800 500" className="w-full" style={{ display: 'block' }}>
+                {type === 'building' && <BuildingSVG />}
+
+                {spots.map(spot => {
+                  const isActive = activeSpot?.id === spot.id
+                  return (
+                    <g
+                      key={spot.id}
+                      style={{ cursor: 'pointer' }}
+                      onClick={() => setActiveSpot(isActive ? null : spot)}
+                    >
+                      <circle cx={spot.x} cy={spot.y} r="20"
+                        fill={isActive ? 'rgba(172,52,0,0.25)' : 'rgba(245,158,11,0.18)'} />
+                      <circle cx={spot.x} cy={spot.y} r="12"
+                        fill={isActive ? '#ac3400' : '#f59e0b'}
+                        stroke="white" strokeWidth="2" />
+                      <text
+                        x={spot.x} y={spot.y}
+                        textAnchor="middle" dominantBaseline="central"
+                        fill="white" fontSize="9"
+                        fontFamily="monospace" fontWeight="bold"
+                      >
+                        {spot.id}
+                      </text>
+                    </g>
+                  )
+                })}
+              </svg>
+
+              {/* Legend */}
+              <div className="flex items-center gap-5 px-4 py-2.5 border-t border-white/10">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-amber-400 flex-shrink-0" />
+                  <span className="text-white/45 text-xs font-mono">Available</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ac3400] flex-shrink-0" />
+                  <span className="text-white/45 text-xs font-mono">Selected</span>
+                </div>
+                <span className="text-white/25 text-xs font-mono ml-auto hidden sm:block">
+                  TAP A MARKER TO SELECT
+                </span>
+              </div>
+            </>
+          )}
         </div>
 
         {/* Active spot detail panel */}

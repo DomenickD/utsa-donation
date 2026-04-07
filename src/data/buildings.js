@@ -29,6 +29,7 @@ export const buildings = [
       {
         id: 2,
         name: 'Field 2',
+        image: '/utsa-field.png',
         points: [[1035, 204], [423, 580], [440, 580], [440, 610], [430, 618], [880, 820], [975, 748], [960, 720], [960, 670], [1430, 344]],
         blueprint: {
           type: 'field',
