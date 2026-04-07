@@ -9,9 +9,57 @@ export const buildings = [
     areas: [],
     division: 'Athletics',
     zones: [
-      { id: 1, name: 'Field 1', points: [[2, 420], [684, 81], [1010, 203], [355, 589]] },
-      { id: 2, name: 'Field 2', points: [[1035, 204], [423, 580], [440, 580], [440, 610], [430, 618], [880, 820], [975, 748], [960, 720], [960, 670], [1430, 344]] },
-      { id: 3, name: 'Building', points: [[1550, 268], [1874, 375], [1874, 500], [1300, 900], [975, 748], [960, 720], [960, 670]] },
+      {
+        id: 1,
+        name: 'Field 1',
+        points: [[2, 420], [684, 81], [1010, 203], [355, 589]],
+        blueprint: {
+          type: 'field',
+          spots: [
+            { id: 1, x: 400, y: 18, label: 'Main Scoreboard', giftLevel: '$500,000', status: 'Available' },
+            { id: 2, x: 630, y: 18, label: 'Press Box Suite', giftLevel: '$750,000', status: 'Available' },
+            { id: 3, x: 400, y: 468, label: 'Home Sideline', giftLevel: '$250,000', status: 'Available' },
+            { id: 4, x: 400, y: 50, label: 'Visitor Sideline', giftLevel: '$200,000', status: 'Available' },
+            { id: 5, x: 95, y: 250, label: 'West End Zone', giftLevel: '$150,000', status: 'Available' },
+            { id: 6, x: 705, y: 250, label: 'East End Zone', giftLevel: '$150,000', status: 'Available' },
+            { id: 7, x: 158, y: 468, label: 'Field Entrance Tunnel', giftLevel: '$100,000', status: 'Available' },
+          ],
+        },
+      },
+      {
+        id: 2,
+        name: 'Field 2',
+        points: [[1035, 204], [423, 580], [440, 580], [440, 610], [430, 618], [880, 820], [975, 748], [960, 720], [960, 670], [1430, 344]],
+        blueprint: {
+          type: 'field',
+          spots: [
+            { id: 1, x: 400, y: 18, label: 'Field 2 Scoreboard', giftLevel: '$300,000', status: 'Available' },
+            { id: 2, x: 400, y: 468, label: 'South Bleachers', giftLevel: '$175,000', status: 'Available' },
+            { id: 3, x: 400, y: 50, label: 'North Bleachers', giftLevel: '$175,000', status: 'Available' },
+            { id: 4, x: 95, y: 250, label: 'West Practice End Zone', giftLevel: '$75,000', status: 'Available' },
+            { id: 5, x: 705, y: 250, label: 'East Practice End Zone', giftLevel: '$75,000', status: 'Available' },
+            { id: 6, x: 158, y: 50, label: 'Concession Stand', giftLevel: '$150,000', status: 'Available' },
+            { id: 7, x: 640, y: 468, label: 'Ticket Gate', giftLevel: '$50,000', status: 'Available' },
+          ],
+        },
+      },
+      {
+        id: 3,
+        name: 'Building',
+        points: [[1550, 268], [1874, 375], [1874, 500], [1300, 900], [975, 748], [960, 720], [960, 670]],
+        blueprint: {
+          type: 'building',
+          spots: [
+            { id: 1, x: 140, y: 140, label: 'Main Lobby', giftLevel: '$1,000,000', status: 'Available' },
+            { id: 2, x: 400, y: 140, label: 'Weight Room', giftLevel: '$1,000,000', status: 'Available' },
+            { id: 3, x: 660, y: 140, label: 'Media & Film Room', giftLevel: '$250,000', status: 'Available' },
+            { id: 4, x: 140, y: 360, label: 'Locker Room A', giftLevel: '$500,000', status: 'Available' },
+            { id: 5, x: 400, y: 360, label: 'Training Room', giftLevel: '$750,000', status: 'Available' },
+            { id: 6, x: 660, y: 300, label: "Coach's Suite", giftLevel: '$500,000', status: 'Available' },
+            { id: 7, x: 660, y: 420, label: 'Locker Room B', giftLevel: '$500,000', status: 'Available' },
+          ],
+        },
+      },
     ],
   },
   {
