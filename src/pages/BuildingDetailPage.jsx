@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react'
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import { getBuildingById } from '../data/buildings'
 
+// Set to true to show pixel coordinate labels on plan images for layout adjustment
+const SHOW_COORD_LABELS = false
+
 export default function BuildingDetailPage() {
   const { id } = useParams()
   const navigate = useNavigate()
   const building = getBuildingById(id)
   const [hoveredZone, setHoveredZone] = useState(null)
   const [isTouch, setIsTouch] = useState(false)
+  const [activeZone, setActiveZone] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -35,17 +39,23 @@ export default function BuildingDetailPage() {
             <h1 className="font-headline text-3xl md:text-5xl font-black text-[#000d21] tracking-tighter mb-5 md:mb-8 uppercase">
               {building.name}
             </h1>
-            <div className="relative rounded-2xl overflow-hidden aspect-video mb-5 md:mb-8 bg-[#e3e2e5]">
+            <div
+              className="relative rounded-2xl overflow-hidden mb-5 md:mb-8 bg-[#e3e2e5]"
+              style={building.planImage
+                ? { aspectRatio: building.viewBox ? `${building.viewBox.split(' ')[2]} / ${building.viewBox.split(' ')[3]}` : 'auto' }
+                : { aspectRatio: '16/9' }
+              }
+            >
               <img
-                src={building.image}
+                src={building.planImage || building.image}
                 alt={building.name}
-                className="w-full h-full object-cover"
+                className={`w-full h-full ${building.planImage ? 'object-contain' : 'object-cover'}`}
               />
               {building.zones && (
                 <svg
                   className="absolute inset-0 w-full h-full"
-                  viewBox="0 0 1980 1114"
-                  preserveAspectRatio="none"
+                  viewBox={building.viewBox || '0 0 1980 1114'}
+                  preserveAspectRatio={building.planImage ? 'xMidYMid meet' : 'none'}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   {building.zones.map((zone) => {
@@ -56,7 +66,7 @@ export default function BuildingDetailPage() {
                     return (
                       <g
                         key={zone.id}
-                        onClick={() => navigate(`/buildings/${id}/zones/${zone.id}`)}
+                        onClick={() => building.dialogMode ? setActiveZone(zone) : navigate(`/buildings/${id}/zones/${zone.id}`)}
                         onMouseEnter={() => setHoveredZone(zone.id)}
                         onMouseLeave={() => setHoveredZone(null)}
                         style={{ cursor: 'pointer' }}
@@ -86,6 +96,15 @@ export default function BuildingDetailPage() {
                         >
                           {zone.name}
                         </text>
+                        {SHOW_COORD_LABELS && building.planImage && zone.points.map((p) => (
+                          <g key={`${p[0]}-${p[1]}`} style={{ pointerEvents: 'none' }}>
+                            <rect x={p[0] + 4} y={p[1] - 18} width="64" height="20" fill="rgba(0,0,0,0.65)" rx="3" />
+                            <text x={p[0] + 6} y={p[1] - 4} fill="yellow" fontSize="14" fontFamily="monospace" fontWeight="bold">
+                              {p[0]},{p[1]}
+                            </text>
+                            <circle cx={p[0]} cy={p[1]} r="5" fill="yellow" />
+                          </g>
+                        ))}
                       </g>
                     )
                   })}
@@ -153,6 +172,53 @@ export default function BuildingDetailPage() {
 
         </div>
       </div>
+
+      {/* Zone dialog for dialogMode buildings */}
+      {activeZone && (
+        <button
+          type="button"
+          aria-label="Close dialog"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 w-full"
+          onClick={(e) => e.target === e.currentTarget && setActiveZone(null)}
+        >
+          <dialog
+            open
+            aria-label={activeZone.name}
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative m-0 p-0 border-0"
+          >
+            <div className="bg-[#000d21] px-8 py-6 flex items-start justify-between gap-4">
+              <div>
+                <p className="text-[#ac3400] text-xs font-black uppercase tracking-widest mb-1">Naming Opportunity</p>
+                <h2 className="font-headline text-2xl font-black text-white uppercase tracking-tight">{activeZone.name}</h2>
+              </div>
+              <button
+                onClick={() => setActiveZone(null)}
+                className="text-white/50 hover:text-white transition-colors mt-1 flex-shrink-0"
+              >
+                <span className="material-symbols-outlined">close</span>
+              </button>
+            </div>
+            <div className="px-8 py-6">
+              <p className="text-[#44474d] text-sm leading-relaxed mb-6">{activeZone.description}</p>
+              <div className="flex items-center justify-between bg-[#f5f3f6] rounded-xl px-5 py-4 mb-6">
+                <span className="text-[#000d21] text-xs font-black uppercase tracking-widest">Gift Level</span>
+                <span className="font-headline text-lg font-black text-[#ac3400]">{activeZone.giftLevel}</span>
+              </div>
+              <a
+                href="https://engage.utsa.edu/givenow"
+                target="_blank"
+                rel="noreferrer"
+                className="block w-full text-center bg-[#ac3400] text-white font-headline font-bold py-4 rounded-full hover:opacity-80 transition-opacity"
+              >
+                Make a Gift
+              </a>
+              <p className="text-[#000d21]/40 text-xs text-center mt-3 leading-relaxed">
+                Contact our team to learn more about this naming opportunity.
+              </p>
+            </div>
+          </dialog>
+        </button>
+      )}
     </main>
   )
 }

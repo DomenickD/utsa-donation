@@ -1,3 +1,5 @@
+import softballStadiumImg from '../assets/softball_stadium.png'
+
 export const buildings = [
   {
     id: 8,
@@ -64,6 +66,67 @@ export const buildings = [
     ],
   },
   {
+    id: 4,
+    name: 'Roadrunner Field (Softball)',
+    status: 'Named',
+    giftLevel: '—',
+    namedBy: '—',
+    image: 'https://goutsa.com/imgproxy/dWNPiDXpET0Ba1GVn8Hnct9L6RePSI1Vy44ZYVmfvs4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjUvMDQvMDgvc3BqdkV0c0tHTDhORGUxTU1VVjF4cmtoRjNPazl6aXg3emdRNWlDQy5wbmc.png',
+    planImage: softballStadiumImg,
+    viewBox: '0 0 913 665',
+    dialogMode: true,
+    areas: [],
+    division: 'Athletics',
+    zones: [
+      {
+        id: 1,
+        name: 'Playing Field',
+        description: 'The heart of Roadrunner Softball — from the outfield fence to home plate. A naming opportunity here puts your legacy at the center of every pitch, hit, and championship moment.',
+        giftLevel: 'TBD',
+        points: [
+          [222, 152], // left foul line meets outfield fence
+          [335, 90],  // outfield arc far left
+          [470, 60],  // outfield arc left-center
+          [595, 100], // outfield arc right-center
+          [710, 183], // outfield arc far right
+          [760, 290], // right foul line meets outfield fence
+          [455, 479], // home plate (foul lines converge)
+          [415, 470], // home plate (foul lines converge)
+        ],
+      },
+      {
+        id: 2,
+        name: 'Lanes',
+        description: 'The main seating area and press box where fans, family, and media experience every game. Naming this section ensures your recognition is seen by every visitor throughout the season.',
+        giftLevel: 'TBD',
+        points: [[44, 194], [152, 127], [244, 277], [137, 340]],
+      },
+      {
+        id: 3,
+        name: 'Bleachers',
+        description: 'The concourse, dugouts, and support facilities that keep the game running. A gift here directly supports the day-to-day experience of our student-athletes and their families.',
+        giftLevel: 'TBD',
+        points: [
+          [267, 420],
+          [275, 410],
+          [275, 400],
+          [310, 377],
+          [285, 330],
+          [315, 315],
+          [415, 470],
+          [455, 479],
+          [610, 380],
+          [632, 412],
+          [585, 440],
+          [620, 500],
+          [610, 500],
+          [450, 590],
+          [360, 570],
+        ],
+      },
+    ],
+  },
+  {
     id: 1,
     name: 'Alamodome',
     status: 'Named',
@@ -90,16 +153,6 @@ export const buildings = [
     giftLevel: '—',
     namedBy: '—',
     image: 'https://goutsa.com/imgproxy/k5zT_VSEbNxNkgAy-7iaukBWANzg_v3oBu4qfzhi5f0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjUvMDQvMDgvTGRyR2o4cFpjWlVyOUo1R3k5U0k2cXJKZmY5bHdOM1UybDFHZGR1cC5wbmc.png',
-    areas: [],
-    division: 'Athletics',
-  },
-  {
-    id: 4,
-    name: 'Roadrunner Field (Softball)',
-    status: 'Named',
-    giftLevel: '—',
-    namedBy: '—',
-    image: 'https://goutsa.com/imgproxy/dWNPiDXpET0Ba1GVn8Hnct9L6RePSI1Vy44ZYVmfvs4/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dvdXRzYS1wcm9kLzIwMjUvMDQvMDgvc3BqdkV0c0tHTDhORGUxTU1VVjF4cmtoRjNPazl6aXg3emdRNWlDQy5wbmc.png',
     areas: [],
     division: 'Athletics',
   },
